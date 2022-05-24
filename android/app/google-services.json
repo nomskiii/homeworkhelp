@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484466707561",
+    "project_id": "homeworkhelper-c86e8",
+    "storage_bucket": "homeworkhelper-c86e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484466707561:android:85ad83031c11d472cce6f8",
+        "android_client_info": {
+          "package_name": "com.example.homeworkhelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484466707561-77u4ovej6888dujcumli6mal1aqvl6hm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB_1seWaPOb9xvcrieNcqt4xnj7dk3cMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484466707561-77u4ovej6888dujcumli6mal1aqvl6hm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
