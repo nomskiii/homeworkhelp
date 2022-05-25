@@ -15,6 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   late String email;
   late String  password;
 
+
   Widget build(BuildContext context) {
     final myController = TextEditingController();
     final myController2 = TextEditingController();
@@ -67,7 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     name = myController.text;
                     email = myController2.text;
                     password = myController3.text;
-                    if (myController4.text == password)  {
+                    if ((myController4.text == password))  {
                       Navigator.pop(context);
                     } else {
                       Fluttertoast.showToast(
