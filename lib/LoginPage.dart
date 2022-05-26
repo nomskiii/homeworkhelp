@@ -76,6 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   email = myController.text;
                   password = myController2.text;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UploadPage())
+                  );
                 },
                 child: const Text("Login",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
