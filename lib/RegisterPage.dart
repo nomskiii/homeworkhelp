@@ -13,7 +13,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   late String name;
   late String email;
-  late String  password;
+  late String password;
 
 
   Widget build(BuildContext context) {
