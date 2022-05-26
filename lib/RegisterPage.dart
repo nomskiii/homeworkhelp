@@ -6,11 +6,6 @@ import 'LoginPage.dart';
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
-
-
-
-
-
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
@@ -20,6 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   late String email;
   late String  password;
 
+
   Widget build(BuildContext context) {
     final myController = TextEditingController();
     final myController2 = TextEditingController();
@@ -27,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final myController4 = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: const Text('Register'),
       ),
       body: Center(
         child: Column(
@@ -61,18 +57,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 controller: myController4,
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               SizedBox(
                 height:60,
                 width:150,
                 child: FloatingActionButton(
-                  shape: BeveledRectangleBorder(
+                  shape: const BeveledRectangleBorder(
                       borderRadius: BorderRadius.zero),
                   onPressed: () {
                     name = myController.text;
                     email = myController2.text;
                     password = myController3.text;
-                    if (myController4.text == password) {
+                    if ((myController4.text == password))  {
                       Navigator.pop(context);
                     } else {
                       Fluttertoast.showToast(
@@ -90,7 +86,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
                 ),
               )
-
             ],
         )
       )

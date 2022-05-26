@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height:60,
               width:100,
               child: FloatingActionButton(
-                shape: BeveledRectangleBorder(
+                shape: const BeveledRectangleBorder(
                     borderRadius: BorderRadius.zero),
                 onPressed: () {
                   email = myController.text;
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             ElevatedButton(
-              child: Text("Don't have an account!? Click to register homie"),
+              child: const Text("Don't have an account!? Click to register homie"),
               onPressed: () {
                 Navigator.push(
                   context,
