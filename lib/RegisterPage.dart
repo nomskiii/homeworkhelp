@@ -12,16 +12,12 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
-
-
-
 class _RegisterPageState extends State<RegisterPage> {
   late String name;
   late String email;
   late String password;
 
   DatabaseReference ref = FirebaseDatabase.instance.ref('users');
-
 
   Future<void> addUser(){
     return ref

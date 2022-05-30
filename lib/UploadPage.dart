@@ -32,6 +32,19 @@ class _UploadPageState extends State<UploadPage> {
     }
   }
 
+  DatabaseReference ref = FirebaseDatabase.instance.ref('assignments');
+
+  Future<void> addAssignment(){
+    return ref
+        .set({
+      'class': className,
+      'teacher': teacher,
+      'assignment': hwName,
+      'image': _image
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final myController = TextEditingController();
@@ -113,12 +126,13 @@ class _UploadPageState extends State<UploadPage> {
                       teacher = myController2.text;
                       hwName = myController3.text;
 
-                      if (myController3.text != null)  {
+                      if (myController3.text != null && _image != null)  {
                         //upload to firebase idk how to do that
+                        addAssignment();
                         Navigator.pop(context);
                       } else {
                         Fluttertoast.showToast(
-                            msg: "Please enter a title for the assignment",
+                            msg: "Please enter a title for the assignment and upload an image",
                             toastLength: Toast.LENGTH_SHORT,
                             gravity: ToastGravity.CENTER,
                             timeInSecForIosWeb: 5,
