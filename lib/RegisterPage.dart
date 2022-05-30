@@ -12,11 +12,25 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
+
+
+
 class _RegisterPageState extends State<RegisterPage> {
   late String name;
   late String email;
   late String password;
 
+  DatabaseReference ref = FirebaseDatabase.instance.ref('users');
+
+
+  Future<void> addUser(){
+    return ref
+        .set({
+      'name': name,
+      'email': email,
+      'password': password
+    });
+  }
 
   Widget build(BuildContext context) {
     final myController = TextEditingController();
@@ -71,6 +85,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     email = myController2.text;
                     password = myController3.text;
                     if ((myController4.text == password))  {
+                      addUser();
                       Navigator.pop(context);
                     } else {
                       Fluttertoast.showToast(

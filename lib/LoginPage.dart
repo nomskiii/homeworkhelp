@@ -4,7 +4,9 @@ import 'RegisterPage.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const LoginPage());
 }
 
@@ -37,8 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   late String email;
   late String password;
-
-
+  DatabaseReference ref = FirebaseDatabase.instance.ref();
 
   @override
   Widget build(BuildContext context) {
