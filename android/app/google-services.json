@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "484466707561",
+    "firebase_url": "https://homeworkhelper-c86e8-default-rtdb.firebaseio.com",
     "project_id": "homeworkhelper-c86e8",
     "storage_bucket": "homeworkhelper-c86e8.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "484466707561-77u4ovej6888dujcumli6mal1aqvl6hm.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "484466707561-t9iei8heka8aju2iml82d97vurate1sj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.homeworkhelp"
+              }
             }
           ]
         }
