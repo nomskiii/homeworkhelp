@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'LoginPage.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'package:uuid/uuid.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -16,11 +16,12 @@ class _RegisterPageState extends State<RegisterPage> {
   late String name;
   late String email;
   late String password;
+  var uuid = Uuid();
 
   DatabaseReference ref = FirebaseDatabase.instance.ref('users');
 
   Future<void> addUser(){
-    return ref
+    return ref.child(uuid.v4())
         .set({
       'name': name,
       'email': email,
