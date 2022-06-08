@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'UploadPage.dart';
+import 'FeedPage.dart';
 import 'RegisterPage.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   password = myController2.text;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => UploadPage())
+                    MaterialPageRoute(builder: (context) => FeedPage(email : this.email))
                   );
                 },
                 child: const Text("Login",

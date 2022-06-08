@@ -7,7 +7,8 @@ import 'package:firebase_core/firebase_core.dart';
 
 
 class UploadPage extends StatefulWidget {
-  const UploadPage({Key? key}) : super(key: key);
+  final String email;
+  const UploadPage({Key? key, required this.email}) : super(key: key);
 
   @override
   State<UploadPage> createState() => _UploadPageState();
