@@ -10,7 +10,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(LoginPage());
+  runApp(const LoginPage());
 }
 
 class LoginPage extends StatelessWidget {
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               controller: myController,
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             TextFormField(
               decoration: const InputDecoration(
                 border: UnderlineInputBorder(),
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               controller: myController2,
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             SizedBox(
               height:60,
               width:100,
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   password = myController2.text;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => UploadPage())
+                    MaterialPageRoute(builder: (context) => const UploadPage())
                   );
                 },
                 child: const Text("Login",
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => RegisterPage())
+                  MaterialPageRoute(builder: (context) => const RegisterPage())
                 );
               },
             )

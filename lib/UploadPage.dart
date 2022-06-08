@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:uuid/uuid.dart';
 
 
 class UploadPage extends StatefulWidget {
@@ -18,6 +21,8 @@ class _UploadPageState extends State<UploadPage> {
   late String className;
   late String teacher;
   late String hwName;
+  late String image;
+  var uuid = Uuid();
   File? _image;
 
   final _picker = ImagePicker();
@@ -28,6 +33,8 @@ class _UploadPageState extends State<UploadPage> {
     if (pickedImage != null) {
       setState(() {
         _image = File(pickedImage.path);
+        final bytes = _image?.readAsBytesSync();
+        image = base64Encode(bytes!);
       });
     }
   }
@@ -35,12 +42,12 @@ class _UploadPageState extends State<UploadPage> {
   DatabaseReference ref = FirebaseDatabase.instance.ref('assignments');
 
   Future<void> addAssignment(){
-    return ref
+    return ref.child(uuid.v4())
         .set({
       'class': className,
       'teacher': teacher,
       'assignment': hwName,
-      'image': _image
+      'image': image
     });
   }
 
