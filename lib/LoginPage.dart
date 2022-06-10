@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late String email;
   late String password;
 
-  DatabaseReference ref = FirebaseDatabase.instance.ref();
+  DatabaseReference ref = FirebaseDatabase.instance.ref('users');
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   email = myController.text;
                   password = myController2.text;
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => FeedPage(email : this.email))

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:homeworkhelp/User.dart';
 import 'LoginPage.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,10 +22,11 @@ class _RegisterPageState extends State<RegisterPage> {
   DatabaseReference ref = FirebaseDatabase.instance.ref('users');
 
   Future<void> addUser(){
+
     return ref.child(uuid.v4())
         .set({
       'name': name,
-      'email': email,
+      'email' : email,
       'password': password
     });
   }
