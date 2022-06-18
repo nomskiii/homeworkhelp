@@ -15,20 +15,28 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   late String name;
-  late String email;
+  late String username;
   late String password;
-  var uuid = Uuid();
 
   DatabaseReference ref = FirebaseDatabase.instance.ref('users');
 
-  Future<void> addUser(){
 
-    return ref.child(uuid.v4())
-        .set({
-      'name': name,
-      'email' : email,
-      'password': password
-    });
+
+  Future<void> addUser() async{
+    try {
+      return ref.child(username)
+          .set({
+        'name': name,
+        'password': password
+      });
+    } catch (err) {
+      print('Caught error: $err');
+    }
+  }
+  Future  getUserAmount() async
+  {
+    
+
   }
 
   Widget build(BuildContext context) {
@@ -81,7 +89,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       borderRadius: BorderRadius.zero),
                   onPressed: () {
                     name = myController.text;
-                    email = myController2.text;
+                    username = myController2.text;
                     password = myController3.text;
                     if ((myController4.text == password))  {
                       addUser();

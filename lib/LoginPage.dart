@@ -40,7 +40,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  late String email;
+  late String username;
   late String password;
 
   DatabaseReference ref = FirebaseDatabase.instance.ref('users');
@@ -81,12 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: const BeveledRectangleBorder(
                     borderRadius: BorderRadius.zero),
                 onPressed: () {
-                  email = myController.text;
+                  username = myController.text;
                   password = myController2.text;
 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FeedPage(email : this.email))
+                    MaterialPageRoute(builder: (context) => FeedPage(email : this.username))
                   );
                 },
                 child: const Text("Login",

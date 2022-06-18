@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:homeworkhelp/UploadPage.dart';
 
 class FeedPage extends StatefulWidget {
-  String email;
+  String username;
   String name = '';
-  FeedPage({Key? key, required this.email}) : super(key: key);
+  FeedPage({Key? key, required this.username}) : super(key: key);
 
   @override
   State<FeedPage> createState() => _FeedPageState();
@@ -19,22 +19,22 @@ class FeedPage extends StatefulWidget {
 
 class _FeedPageState extends State<FeedPage> {
 
-  DatabaseReference _database = FirebaseDatabase.instance.ref();
-  String _performSingleFetch() {
-    _database.child('users').get().then((snapshot) {
-      if (snapshot != null) {
-        final users = Map<String, dynamic>.from((snapshot.value! as Event).snapshot.value;
+  //DatabaseReference _database = FirebaseDatabase.instance.ref();
+  //String _performSingleFetch() {
+    //_database.child('users').get().then((snapshot) {
+     // if (snapshot != null) {
+        //final users = Map<String, dynamic>.from((snapshot.value! as Event).snapshot.value;
 
-        users.forEach((key, value) {
-          final nextUser = Map<String, dynamic>.from(value);
-          if(nextUser['Email'] == widget.email) {
-            return nextUser['Name'];
-      }
-      });
-      }
-    });
-    return 'notThere';
-  }
+        //users.forEach((key, value) {
+       //   final nextUser = Map<String, dynamic>.from(value);
+       //   if(nextUser['Email'] == widget.email) {
+       //     return nextUser['Name'];
+      //}
+      //});
+      //}
+    //});
+    //return 'notThere';
+  //}
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +46,7 @@ class _FeedPageState extends State<FeedPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Email: $widget.email'),
-            Text('Name: $_performSingleFetch()')
+            //Text('Name: $_performSingleFetch()')
           ],
         )
         //child: ListView.builder(
